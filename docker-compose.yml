@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+  postgres:
+    build:
+      dockerfile: ./Dockerfile
+      context: ./postgres
+    restart: always
+    environment: 
+    - POSTGRES_USER=postgres
+    - POSTGRES_PASSWORD=postgres
+    networks:
+      - callendar-api
+    ports:
+      - '5552:5432'
+
+networks:
+   callendar-api:
+    driver: bridge
