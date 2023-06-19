@@ -1,0 +1,3 @@
+DROP TABLE IF EXISTS account.users CASCADE;
+DROP TABLE IF EXISTS events.events CASCADE;
+DROP TABLE IF EXISTS events.eventUser CASCADE;

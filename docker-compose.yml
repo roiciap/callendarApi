@@ -1,4 +1,7 @@
 version: '3.7'
+x-database-env-variables: &postgresConnect
+  POSTGRES_USER: ${POSTGRES_USER}
+  POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
 
 services:
   postgres:
@@ -7,12 +10,13 @@ services:
       context: ./postgres
     restart: always
     environment: 
-    - POSTGRES_USER=postgres
-    - POSTGRES_PASSWORD=postgres
+      <<: *postgresConnect
     networks:
       - callendar-api
     ports:
       - '5552:5432'
+    volumes:
+      - ./postgres/create_database:/app/create
 
 networks:
    callendar-api:
