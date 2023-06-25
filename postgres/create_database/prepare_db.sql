@@ -1,3 +1,6 @@
 DROP TABLE IF EXISTS account.users CASCADE;
 DROP TABLE IF EXISTS events.events CASCADE;
 DROP TABLE IF EXISTS events.eventUser CASCADE;
+DROP TABLE IF EXISTS workout.workoutType CASCADE;
+DROP TABLE IF EXISTS workout.workoutSession CASCADE;
+DROP TABLE IF EXISTS workout.workout CASCADE;
